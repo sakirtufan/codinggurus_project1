@@ -1,0 +1,49 @@
+/** Fonts  **/
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,300,400|Roboto+Condensed:300,700&display=swap');
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$primary-font:'Raleway', sans-serif;
+$secondary-font: 'Roboto Condensed', sans-serif;
+$primary-color: #4792a5;
+$secondary-color:#eece1a;
+$light-color: #efefef;
+$dark-color: #3c3c3c;    
+$general-transition: all .4s ease;
+
+
+
+html{
+    font-size: 10px;
+    font-family:$primary-font;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+canvas {
+  display: block;
+}
+
+/* ---- particles.js container ---- */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color:$dark-color;
+  background-image:linear-gradient(0deg, rgba(0,0,0, 0.7), rgba(0,0,0, 0.9)), url("../images/WhatsApp\ Image\ 2020-09-20\ at\ 19.48.55.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+h1{
+  color:$light-color;
+
+}
