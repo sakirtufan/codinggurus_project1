@@ -25,14 +25,6 @@ a {
   user-select: none;
 }
 
-button {
-  background: none;
-  border: none;
-}
-button:focus {
-  outline: none;
-}
-
 .lg-heading {
   font-size: 7rem;
 }
@@ -62,6 +54,96 @@ canvas {
   background-size: cover;
   background-position: center;
   z-index: -1;
+}
+
+/* ---- navigation ---- */
+.navigation {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #4792a5;
+  z-index: 200;
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 300ms ease-in-out;
+}
+.navigation:active {
+  clip-path: circle(75%);
+}
+.navigation:active .ham-btn span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.navigation:active .ham-btn span:nth-child(2) {
+  display: none;
+}
+.navigation:active .ham-btn span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.navigation .ham-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 5rem;
+  height: 5rem;
+  background: #eece1a;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.navigation .ham-btn span {
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%, -50%);
+  height: 2px;
+  background: #efefef;
+  transition: all 200ms ease-in-out;
+}
+.navigation .ham-btn span:nth-child(1) {
+  top: 30%;
+}
+.navigation .ham-btn span:nth-child(2) {
+  top: 50%;
+}
+.navigation .ham-btn span:nth-child(3) {
+  top: 70%;
+}
+.navigation .links-img {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation .links-img .img {
+  position: relative;
+  right: 15%;
+}
+.navigation .links-img .links {
+  position: relative;
+  left: 15%;
+}
+.navigation .links-img .links a {
+  position: relative;
+  display: inline-block;
+  margin: 3rem 0px;
+  font-size: 5rem;
+  color: #efefef;
+  letter-spacing: 0.5rem;
+}
+.navigation .links-img .links a::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -5px;
+  height: 2px;
+  width: 100%;
+  background: tomato;
+  transition: all 0.5s ease-out;
+}
+.navigation .links-img .links a:hover::after {
+  width: 100%;
 }
 
 /* ---- main ---- */

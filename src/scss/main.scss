@@ -4,6 +4,7 @@
 
 
 
+
 canvas {
   display: block;
 }
@@ -22,6 +23,111 @@ canvas {
   background-position: center;
   z-index: -1;
 }
+/* ---- navigation ---- */
+.navigation{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: $primary-color;
+  z-index: 200;
+  clip-path: circle(25px at calc(100% - 45px)45px);
+  transition: all 300ms ease-in-out;
+
+  &:active{
+    clip-path: circle(75%);
+
+    .ham-btn span:nth-child(1){
+      top: 50%;
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+    .ham-btn span:nth-child(2){
+      display: none;
+    }
+    .ham-btn span:nth-child(3){
+      top: 50%;
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+  }
+
+  .ham-btn{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 5rem;
+    height: 5rem;
+    background: $secondary-color;
+    border-radius: 50%;
+    cursor: pointer;
+
+    span{
+      position: absolute;
+      left: 50%;
+      width: 50%;
+      transform: translate(-50%,-50%);
+      height: 2px;      
+      background:$light-color;
+      transition: all 200ms ease-in-out ;
+      
+
+      &:nth-child(1){
+        top: 30%;
+      }
+
+      &:nth-child(2){
+        top: 50%;
+      }
+
+      &:nth-child(3){
+        top: 70%;
+      }
+      
+    }
+  }
+
+  .links-img{
+    height: 100vh;
+    @include flex-center;
+
+    .img{
+      position: relative;
+      right: 15%;      
+    }
+
+    .links{
+      position: relative;
+      left: 15%;
+
+      a{
+        position: relative;
+        display: inline-block;
+        margin: 3rem 0px;
+        font-size: 5rem;
+        color:$light-color;
+        letter-spacing: .5rem;
+
+        &::after{
+          content: "";
+          position: absolute;
+          left: 0px;
+          bottom: -5px;
+          height: 2px;
+          width: 100%;
+          background: tomato;
+          @include easeOut;
+        }
+
+        &:hover::after{
+          width: 100%;
+        }
+
+      }
+    }
+  }
+}
+
+
 
 /* ---- main ---- */
 main{
