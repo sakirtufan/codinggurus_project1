@@ -1,0 +1,58 @@
+$primary-font:'Raleway', sans-serif;
+$secondary-font: 'Roboto Condensed', sans-serif;
+$primary-color: #4792a5;
+$secondary-color:#eece1a;
+$light-color: #efefef;
+$dark-color: #3c3c3c;    
+$general-transition: all .4s ease;
+
+
+body,* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+html{
+    font-size: 10px;
+    font-family:$primary-font;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color:$light-color;  
+}
+
+a{
+	text-decoration: none;
+	text-transform: uppercase;
+	user-select: none;
+}
+
+button {
+	background: none;
+	border: none;
+	&:focus {
+		outline: none;
+	}
+}
+  
+.lg-heading{font-size: 7rem;}
+.md-heading{font-size: 4rem;}
+.sm-heading{font-size: 2rem;}
+
+@mixin easeOut {
+    transition: all .5s ease-out;
+}
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
