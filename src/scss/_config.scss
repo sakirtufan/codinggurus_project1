@@ -6,20 +6,20 @@ $light-color: #efefef;
 $dark-color: #3c3c3c;    
 $general-transition: all .4s ease;
 
-
-body,* {
+*{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
 }
 
 html{
-    font-size: 10px;
-    font-family:$primary-font;
-    scroll-behavior: smooth;
-    overflow: hidden;
+    font-size: 10px;    
+}
+
+body{
+    line-height: 1,5;
+    // height: 100%;
+    font-family:$primary-font;    
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -29,7 +29,8 @@ h1,h2,h3,h4,h5,h6{
 a{
 	text-decoration: none;
 	text-transform: uppercase;
-	user-select: none;
+    user-select: none;
+    color: $light-color;
 }
 
 
@@ -49,4 +50,27 @@ a{
 }
 
 
+//Media Query Mixins
+@mixin mediaSm {
+    @media screen and (max-width:500px){
+        @content;
+    }
+}
 
+@mixin mediaMd {
+    @media screen and (max-width:768px){
+        @content;
+    }
+}
+
+@mixin mediaLg {
+    @media screen and (min-width:769px) and (max-width:1170px){
+        @content;
+    }
+}
+
+@mixin mediaXl {
+    @media screen and (min-width:1171px){
+        @content;
+    }
+}

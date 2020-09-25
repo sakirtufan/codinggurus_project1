@@ -1,0 +1,49 @@
+//Widescreens
+@include mediaXl{
+    html{
+        font-size: 12px;
+    }
+}
+
+//Desktops and Laptops
+@include mediaLg{
+
+}
+
+//Tablets and Small Laptops
+@include mediaMd{
+    html{
+        font-size: 8px;
+    }
+    main{
+        align-items: center;
+        text-align: center;        
+    }
+
+    ul.menu-nav,div.menu-image{
+        float: none;
+        width: 100%;
+        min-height: 0;
+
+        &.show{
+            transform: translate3d(0,0,0);
+        }
+    }
+
+    .menu-nav{
+        height: 75vh;
+        transform: translate3d(-100%,0,0);        
+    }
+
+    .menu-image{
+        height: 25vh;
+        transform: translate3d(100%,0,0);
+    }
+}
+
+//Smartphones
+@include mediaSm{
+    html{
+        font-size: 6px;
+    }
+}
