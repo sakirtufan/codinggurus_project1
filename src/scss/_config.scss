@@ -19,7 +19,8 @@ html{
 body{
     line-height: 1,5;
     // height: 100%;
-    font-family:$primary-font;    
+    font-family:$primary-font;
+    color:set-text-color($light-color);    
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -49,6 +50,14 @@ a{
 	align-items: center;
 }
 
+//Set Text Color
+@function set-text-color($color){
+    @if (lightness($color) > 40){
+        @return #000;
+    }@else{
+        @return #fff;
+    }
+}
 
 //Media Query Mixins
 @mixin mediaSm {

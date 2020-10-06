@@ -11,7 +11,7 @@
         width: 2.8rem;
         height: 3px;
         margin: 0 0 5px 0;
-        background: $light-color;
+        background: set-text-color($light-color);
         @include easeOut;
     }
 
@@ -93,6 +93,7 @@
     .nav-item{
         transform: translate3d(600px,0,0);
         @include easeOut;
+        
 
         &.show{
             transform: translate3d(0,0,0);
